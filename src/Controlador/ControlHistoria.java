@@ -60,7 +60,7 @@ public class ControlHistoria implements ActionListener {
             }
         }
 
-        // 2. Registrar nueva Historia Clínica (RF-06)
+        // 2. Registrar nueva Historia Clínica 
         if (e.getSource() == vista.btnRegistrar) {
             String numHc = vista.txtNumHistoria.getText().trim();
             String dni = vista.txtDniPaciente.getText().trim();
@@ -81,7 +81,7 @@ public class ControlHistoria implements ActionListener {
             ActualizarVista();
         }
 
-        // 3. Buscar Historias por DNI del paciente (RF-07)
+        // 3. Buscar Historias por DNI del paciente 
         if (e.getSource() == vista.btnBuscarDni) {
             String dni = Mensajes.Leer("Ingrese el DNI del paciente a buscar:");
             if (dni != null && !dni.trim().isEmpty()) {
@@ -94,7 +94,7 @@ public class ControlHistoria implements ActionListener {
             }
         }
 
-        // 4. Buscar Historias por Nombres o Apellidos del paciente (RF-07)
+        // 4. Buscar Historias por Nombres o Apellidos del paciente 
         if (e.getSource() == vista.btnBuscarNombre) {
             String nombre = Mensajes.Leer("Ingrese Apellidos o Nombres del paciente a buscar:");
             if (nombre != null && !nombre.trim().isEmpty()) {
@@ -107,7 +107,7 @@ public class ControlHistoria implements ActionListener {
             }
         }
 
-        // 5. Cargar fila seleccionada de la tabla al formulario para editarla (RF-07)
+        // 5. Cargar fila seleccionada de la tabla al formulario para editarla 
         if (e.getSource() == vista.btnCargarSeleccion) {
             int fila = vista.tblDatos.getSelectedRow();
             if (fila == -1) {
@@ -122,7 +122,7 @@ public class ControlHistoria implements ActionListener {
             }
         }
 
-        // 6. Actualizar datos de la historia clínica cargada (RF-07)
+        // 6. Actualizar datos de la historia clínica cargada 
         if (e.getSource() == vista.btnActualizar) {
             if (nodoEditando != null) {
                 HistoriaClinica hcActualizada = ProcesosHistorias.LeerHistoria(vista);
@@ -135,7 +135,7 @@ public class ControlHistoria implements ActionListener {
             }
         }
 
-        // 7. Eliminar una historia clínica seleccionada en la tabla (RF-07)
+        // 7. Eliminar una historia clínica seleccionada en la tabla 
         if (e.getSource() == vista.btnEliminar) {
             int fila = vista.tblDatos.getSelectedRow();
             if (fila == -1) {

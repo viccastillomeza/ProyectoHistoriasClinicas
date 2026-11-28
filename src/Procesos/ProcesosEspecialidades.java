@@ -2,7 +2,6 @@ package Procesos;
 
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import Estructura.ListaEspecialidades;
 import Modelo.Especialidad;
 import Vista.frmEspecialidad;
 

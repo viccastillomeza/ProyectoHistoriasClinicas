@@ -32,7 +32,7 @@ public class ControlReportes implements ActionListener {
         this.pilaMedico = new PilaAtenciones();
         this.colaRango = new ColaAtenciones();
 
-        // Escuchamos los botones de RF-08 (Pila) y RF-09 (Cola)
+        // Escuchamos los botones 
         this.vista.btnConsultarMedico.addActionListener(this);
         this.vista.btnDesapilar.addActionListener(this);
         this.vista.btnConsultarRango.addActionListener(this);
@@ -47,9 +47,8 @@ public class ControlReportes implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        // ============================================================
-        // RF-08: ATENCIONES QUE HIZO UN MÉDICO DURANTE EL DÍA (PILA)
-        // ============================================================
+        //ATENCIONES QUE HIZO UN MÉDICO DURANTE EL DÍA (PILA)
+        
         if (e.getSource() == vista.btnConsultarMedico) {
             String doctorSel = vista.cbxDoctor.getSelectedItem().toString();
             String fechaDia = vista.txtFechaDia.getText().trim();
@@ -102,9 +101,7 @@ public class ControlReportes implements ActionListener {
             }
         }
 
-        // =========================================================================
-        // RF-09: ATENCIONES POR RANGO DE FECHAS Y ESPECIALIDAD (COLA DE PRIORIDAD)
-        // =========================================================================
+        //ATENCIONES POR RANGO DE FECHAS Y ESPECIALIDAD (COLA DE PRIORIDAD)
         if (e.getSource() == vista.btnConsultarRango) {
             String espSel = vista.cbxEspecialidad.getSelectedItem().toString();
             String fInicioTxt = vista.txtFechaInicio.getText().trim();
@@ -154,7 +151,7 @@ public class ControlReportes implements ActionListener {
             }
         }
 
-        // Demostración de operación POLL sobre la Cola de Prioridad (RF-09)
+        // Demostración de operación POLL sobre la Cola de Prioridad
         if (e.getSource() == vista.btnDesencolar) {
             if (colaRango.EstaVacia()) {
                 Mensajes.Mostrar("La cola está vacía. Realice primero una consulta.");
@@ -166,9 +163,7 @@ public class ControlReportes implements ActionListener {
                 ProcesosReportes.MostrarCola(vista.tblCola, colaRango, vista);
             }
         }
-        // ============================================================
-        // RF-10: BUSCAR HISTORIA DEL PACIENTE Y GENERAR / VER EN PDF
-        // ============================================================
+        // BUSCAR HISTORIA DEL PACIENTE Y GENERAR / VER EN PDF
         if (e.getSource() == vista.btnBuscarPdf) {
             String dni = vista.txtDniPdf.getText().trim();
             if (dni.isEmpty()) {

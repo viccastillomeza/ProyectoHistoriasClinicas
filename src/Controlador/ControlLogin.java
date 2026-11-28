@@ -23,12 +23,12 @@ public class ControlLogin implements ActionListener {
             String user = vista.txtUsuario.getText().trim();
             String pass = vista.txtClave.getText().trim();
 
-            // Credenciales de acceso a la Posta Médica (Req. 1)
+            // Credenciales de acceso a la Posta Médica 
             if (user.equalsIgnoreCase("admin") && pass.equals("1234")) {
                 Mensajes.Mostrar("Bienvenido al Sistema de Historias Clínicas");
                 vista.dispose(); // Cerramos el login
 
-                // Abrimos el menú principal maximizado (igual que en ProyectoEstructuraDatos)
+                // Abrimos el menú principal maximizado
                 frmMenu fm = new frmMenu();
                 fm.setTitle("SISTEMA DE REGISTRO DE HISTORIAS CLÍNICAS DE UNA POSTA");
                 ControlMenu cm = new ControlMenu(fm);
