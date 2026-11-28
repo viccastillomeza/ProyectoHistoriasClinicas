@@ -1,0 +1,10 @@
+# Archivos compilados y ejecutables generados por NetBeans
+build/
+dist/
+
+# Configuración privada de tu PC (rutas locales de NetBeans)
+nbproject/private/
+
+# Ignora solo los PDF de prueba que queden sueltos en la raíz del proyecto,
+# pero SÍ permite subir todos los archivos dentro de tu carpeta de documentos
+/*.pdf
